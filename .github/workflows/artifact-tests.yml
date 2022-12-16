@@ -50,8 +50,3 @@ jobs:
       run: |
         mkdir multi-artifact-directory
         node -e "Promise.resolve(require('./packages/artifact/lib/artifact-client').create().downloadAllArtifacts('multi-artifact-directory'))"
-
-    - name: Verify downloadAllArtifacts()
-      shell: bash
-      run: |
-        packages/artifact/__tests__/test-artifact-file.sh "multi-artifact-directory/my-artifact-2/artifact-path/gzip.txt" "${{ env.gzip-artifact-content }}"
