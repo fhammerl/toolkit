@@ -40,8 +40,4 @@ jobs:
       run: |
         mkdir multi-artifact-directory
         node -e "Promise.resolve(require('./packages/artifact/lib/artifact-client').create().downloadAllArtifacts('multi-artifact-directory'))"
-    
-    - name: Verify downloadAllArtifacts()
-      run: |
-        cat "multi-artifact-directory/my-artifact-2/artifact-path/gzip.txt"
-
+  
